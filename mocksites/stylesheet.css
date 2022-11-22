@@ -1,0 +1,10 @@
+.footer-box {  
+    position: fixed;  
+    left: 10px;  
+    bottom: 5px;  
+    right: 10px;   
+    width: 95%;  
+    background-color: rgb(235, 235, 235);  
+    color: black;  
+    text-align: center;  
+    }  

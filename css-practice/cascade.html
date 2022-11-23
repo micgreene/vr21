@@ -1,9 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
+    <style>
+        /* p {
+            font-weight: bold;
+        } */
+
+        /* #target {
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        .urgent {
+            color: red;
+        } */
+
+        div {
+            margin : 1em;
+            padding : 0.5em;
+        }
+
+        .grey {
+            background-color: lightgray;
+            font-style: italic;
+        }
+
+        .black {
+            background-color: black;
+            color: yellow;
+        }
+
+        .blue {
+            background-color: lightblue;
+        }
+
+        .blue > div {
+            color: lightblue;
+            background-color: maroon;
+        }
+
+        /* body {
+            margin: 2em;
+        } */
+    </style>
 </head>
+
 <body>
-    <p>What will this look like?</p>
+    <div class="grey">
+        <ul>
+            <li>Ramen</li>
+            <li>Lasagna</li>
+            <li>Olives</li>
+        </ul>
+    </div>
+
+    <div class="black">
+        <ul>
+            <li>Terminator 2</li>
+            <li>Fight Club</li>
+            <li>American Beauty</li>
+        </ul>
+    </div>
+
+    <div class="blue">
+        <div>
+            <ul>
+                <li>Kotaro Lives Alone</li>
+                <li>Bob's Burgers</li>
+                <li>House of the Dragon</li>
+            </ul>
+        </div>
+    </div>
+    <!-- <p>A second paragraph.</p>
+    <p class="urgent">This is very, very urgent.</p> -->
 </body>
+
 </html>

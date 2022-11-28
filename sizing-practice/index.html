@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            height: 3000px;
+            width: 2000px;
+        }
+        body p {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .div-1 {
+            box-sizing: content-box;
+            width: 600px;
+            padding: 50px;
+        }
+
+        .div-2 {
+            box-sizing: content-box;
+            width: 600px;
+            padding: 50px;
+            position: sticky; 
+            top: 20px;       
+        }
+
+        .div-1 img:last-child {
+            display: none;
+        }
+
+        .div-1:hover img:last-child {
+            display: block;
+        }
+
+        .div-1:hover img:first-child {
+            display: none;
+        }
+
+        .div-2 img:last-child {
+            display: none;
+        }
+
+        .div-2:hover img:last-child {
+            display: block;
+        }
+
+        .div-2:hover img:first-child {
+            display: none;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="div-1">
+        <img src="https://i0.wp.com/blog.slicelife.com/wp-content/uploads/2020/01/new-york-pizza-slice-pull.jpg?fit=1200%2C630&ssl=1"
+         alt="ny-style" 
+         width="100%" />
+
+         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/5_stars.svg/1280px-5_stars.svg.png" 
+          alt="5-stars"
+          height="250px" 
+          width="900px"/>
+    </div>
+    <div class="div-2">
+        <img src="https://giordanos.com/wp-content/uploads/Hero-image_1210-v2.jpg" 
+         alt="chicago-style" 
+         width="100%" />
+
+         <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Star_rating_1_of_5.png" 
+          alt="1-star"
+          height="250px" 
+          width="900px"/>
+    </div>
+    <p>Spot on Page</p>
+</body>
+
+</html>

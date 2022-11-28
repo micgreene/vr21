@@ -6,59 +6,131 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css">
-    <title>Portfolio Project</title>
+    <title>Michael Greene - Developer</title>
 </head>
 
 <body>
-    <div>
-        <h1>Hello, MKG!</h1>
-        <h2>Apprentice</h2>
-        <span>
-            <ul class="navigation-links">
-                <li><a href="#about">Jump to Goku</a>
-                <li><a href="about.html">About Me</a>
-                <li><a href="https://www.linkedin.com/in/micgreene/">Contact me on LinkedIn</a>
-                <li><a href="https://github.com/micgreene">My GitHub</a>
-            </ul>
+    <div class="navigation-links">
+        <a href="#about-div">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#my_resume">Resume</a>
+
+    </div>
+    <br>
+    <div class="title">
+        <span id="prof-pic"><img width="400px" src="images/prof_pic.jpg" /></span>
+        <span id="name">
+            <h1>> Welcome!</h1>
+            <h2>I'm <i>Michael Greene</i>,</h2>
+            <h3 id="job-line1">a <i>Web/Software Developer</i></h3>
+            <h3 id="job-line2">operating out of Seattle.</h3>
         </span>
     </div>
     <br>
-    <div>
-        <p>Description
-        <ol><b>Ordered List of Tag Types:</b>
-            <br>
-            <li><u>UNDERLINED</u>
-            <li><b>BOLD</b>
-            <li><i>italics</i>
-            <li><s>StrikeOut</s>
-        </ol>
-        <br>
-        <ul><b>Unordered List of Emotions</b>
-            <br>
-            <li>Joy
-            <li>Sorrow
-            <li>Rage
-            <li>Terror
-            <li>Disgust
-        </ul>
-        </p>
-        <p>H<sub>2</sub>O</p>
-        <p>E = mc<sup>2</sup></p>
-        <span>
-            <a href="https://www.linkedin.com/in/micgreene/">Contact me on LinkedIn</a>
-            <br>
-            <button id=" SubmitNpthing" class="btn">Useless Button</button>
-        </span>
-    </div>
     <br>
-    <div>
-        <a href="https://en.dragon-ball-official.com/">
-            <img width="600px" src="https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg" />
-        </a>
-    </div>
-    <section id="about">
-        <p>A Goku section to jump to. <b>Click Goku to learn about the world of Dragon Ball!</b></p>
+    <br>
+    <hr id="projects">
+    <section>
+        <div class="slideshow-container">
+            <h1>Sample Projects</h1>
+            <br>
+            <div class="mySlides fade">
+                <a href="https://github.com/micgreene/2048">
+                    <img src="images/2048_thumbnail.png" style="width:100%">
+                </a>
+                <div class="carousel_caption"><span id="caption-title"><a
+                            href="https://github.com/micgreene/2048">2048</a></span><br><br>A simple number matching
+                    game.<br>UI/Game logic both in Java.</div>
+            </div>
+
+            <div class="mySlides fade">
+                <a href="https://github.com/micgreene/linked_list_to_the_past">
+                    <img src="images/crest.png" style="width:100%">
+                </a>
+                <div class="carousel_caption"><span id="caption-title"><a
+                            href="https://github.com/micgreene/linked_list_to_the_past">Linked List to the
+                            Past</a></span><br><br>A Legend of Zelda clone.<br>UI/Game logic both in Python/Pygame.
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <a href="https://github.com/micgreene/game-of-greed">
+                    <img src="images/cmd_line.png" style="width:100%">
+                </a>
+                <div class="carousel_caption"><span id="caption-title"><a
+                            href="https://github.com/micgreene/game-of-greed">Game of Greed</a></span><br><br>A command
+                    line
+                    game based off of Farkle.<br>Game logic in Python.</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
     </section>
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <section id="my_resume">
+        <div class="resume">
+            <h1>View my Resume</h1>
+            <a href="data/Resume.pdf" download>
+                <img src="images/resume-icon.png" style="width: 400px" />
+            </a>
+        </div>
+    </section>
+    <br>
+    <br>
+    <hr>
+    <section class="about">
+        <div id="about-div">
+            <h1>About Me</h1>
+            <p>I love crafting both software solutions and web facing applications.<br> Prefer to manage databases and
+                APIs. Please check out some of my projects.<br>Feel free to connect with me on <b>LinkedIn</b> and view
+                my <b>GitHub</b> below.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <a href="https://www.linkedin.com/in/micgreene/">LinkedIn</a>
+        <a href="https://github.com/micgreene">GitHub</a>
+    </footer>
+
+
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
 </body>
 
 </html>

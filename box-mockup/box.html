@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+
+    <style>
+        div {
+            box-sizing: border-box;
+            margin: 2em;
+            padding: 1em;
+            background-color: aqua;
+            color: chocolate;
+            outline: 1pt solid rgb(255, 159, 218);
+            outline-offset: 5px;
+            width: 15em;
+            height: 10em;
+            position: static;
+        }
+
+        div:hover {
+            outline-width: 6pt;
+        }
+
+        #box-text {
+            color: blueviolet
+        }
+
+        body {
+            font-size: 12pt;
+        }
+
+        p {
+            position: fixed;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span id="box-text">
+            <p>Box</p>
+        </span>
+    </div>
+    <div>
+        Box
+    </div>
+    <div>
+        Box
+    </div>
+</body>
+
+</html>

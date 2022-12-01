@@ -1,3 +1,6 @@
+console.log("\n\n\n//------------------------------------------------------//");
+console.log("Objects Practice\n\n");
+
 let programming = {
     languages: ["JavaScript", "Python", "Ruby"],
     isChallenging: true,

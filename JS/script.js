@@ -1,3 +1,6 @@
+console.log("\n\n\n//------------------------------------------------------//");
+console.log("Basic Scripting Practice\n\n");
+
 console.log("I am linked to a JavaScript source.");
 console.log();
 const myName = "MKG";

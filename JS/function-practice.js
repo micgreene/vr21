@@ -161,9 +161,11 @@ console.log(isPalindrome('tacocat')); // true
 console.log(isPalindrome('hannah')); // true
 console.log(isPalindrome('robert')); // false
 
-function rockPaperScissors() {
-    console.log("\n\nWelcome to Rock-Paper-Scissors!\n");
-    console.log(("Select a Sign to Throw! (Rock, Paper, or Scissors)"));
+function rockPaperScissors(tryAgain) {
+    if(tryAgain == false || tryAgain == undefined){
+        console.log("\n\nWelcome to Rock-Paper-Scissors!\n");
+        console.log(("Select a Sign to Throw! (Rock, Paper, or Scissors)"));
+    }    
 
     let cpuChoice = Math.floor(Math.random() * 3) + 1;
     let signToBeat = "";
@@ -177,7 +179,7 @@ function rockPaperScissors() {
 
     prompt.start();
 
-    prompt.get(['choice'], function (err, result) {
+    const start = prompt.get(['choice'], function (err, result) {
         if (err) {
           return onErr(err);
         }      
@@ -196,11 +198,11 @@ function rockPaperScissors() {
             case 3: {
                 signToBeat = "Scissors"
             }
-        }
-        console.log("\nCPU has selected: " + signToBeat + "!");
+        }                  
 
         switch(result.choice) {            
             case "rock": {
+                console.log("\nCPU has selected: " + signToBeat + "!");
                 if(signToBeat == "Paper") {
                     console.log(paperWin + lose);
                 } else if(signToBeat == "Scissors") {
@@ -211,6 +213,7 @@ function rockPaperScissors() {
                 break;
             }
             case "paper": {
+                console.log("\nCPU has selected: " + signToBeat + "!");
                 if(signToBeat == "Paper") {
                     console.log(tie);
                 } else if(signToBeat == "Scissors") {
@@ -221,6 +224,7 @@ function rockPaperScissors() {
                 break;
             }
             case "scissors": {
+                console.log("\nCPU has selected: " + signToBeat + "!");
                 if(signToBeat == "Paper") {
                     console.log(scissorsWin + win);
                 } else if(signToBeat == "Scissors") {
@@ -231,11 +235,12 @@ function rockPaperScissors() {
                 break;
             }
             default: {
-                console.log("You must select ROCK, PAPER, or SCISSORS to play!");
+                console.log("\nYou must select ROCK, PAPER, or SCISSORS to play!");
+                tryAgain = true;
+                rockPaperScissors(tryAgain);
             }
         }    
     });    
 }
 
 rockPaperScissors();
-

@@ -4,18 +4,21 @@ function difference(a, b) {
     return a - b;
 }
 
-console.log(difference(2, 2));
-console.log(difference(0, 2));
+console.log("difference: " + difference(2, 2));
+console.log("difference: " + difference(0, 2));
 
 function product(a, b) {
     return a * b;
 }
 
-console.log(product(2, 2)); // 4
-console.log(product(0, 2)); // 0
+console.log("product: " + product(2, 2)); // 4
+console.log("product: " + product(0, 2)); // 0
 
 function printDay(day) {
     switch (day) {
+        default: {
+            return undefined;
+        }
         case 1: {
             return "Sunday";
             break;
@@ -43,22 +46,19 @@ function printDay(day) {
         case 7: {
             return "Saturday"
             break;
-        }
-        default: {
-            return undefined;
-        }
+        }        
     }
 }
 
-console.log(printDay(4)); // "Wednesday"
-console.log(printDay(41)); // undefined
+console.log("printDay: " + printDay(4)); // "Wednesday"
+console.log("printDay: " + printDay(41)); // undefined
 
 function lastElement(arr) {
     return arr[arr.length - 1]
 }
 
-console.log(lastElement([1, 2, 3, 4])); // 4
-console.log(lastElement([])); // undefined
+console.log("lastElement: " + lastElement([1, 2, 3, 4])); // 4
+console.log("lastElement: " + lastElement([])); // undefined
 
 
 function numberCompare(a, b) {
@@ -71,9 +71,9 @@ function numberCompare(a, b) {
     }
 }
 
-console.log(numberCompare(1, 1)); // "Numbers are equal"
-console.log(numberCompare(2, 1)); // "First is greater"
-console.log(numberCompare(1, 2)); // "Second is greater"
+console.log("numberCompare: " + numberCompare(1, 1)); // "Numbers are equal"
+console.log("numberCompare: " + numberCompare(2, 1)); // "First is greater"
+console.log("numberCompare: " + numberCompare(1, 2)); // "Second is greater"
 
 function singleLetterCount(str, char) {
     str = str.toLowerCase();
@@ -86,8 +86,8 @@ function singleLetterCount(str, char) {
     return returnVal;
 }
 
-console.log(singleLetterCount('amazing', 'A')); // 2
-console.log(singleLetterCount('Rithm School', 'o')); // 2
+console.log("singleLetterCount: " + singleLetterCount('amazing', 'A')); // 2
+console.log("singleLetterCount: " + singleLetterCount('Rithm School', 'o')); // 2
 
 function multipleLetterCount(word) {
     retObj = {};
@@ -100,8 +100,8 @@ function multipleLetterCount(word) {
     return retObj
 }
 
-console.log(multipleLetterCount("hello")); // {h:1, e: 1, l: 2, o:1}
-console.log(multipleLetterCount("person")); // {p:1, e: 1, r: 1, s:1, o:1, n:1}
+console.log("multipleLetterCount: " + multipleLetterCount("hello")); // {h:1, e: 1, l: 2, o:1}
+console.log("multipleLetterCount: " + multipleLetterCount("person")); // {p:1, e: 1, r: 1, s:1, o:1, n:1}
 
 function arrayManipulation(arr, cmd, loc, val) {
     cmd = cmd.toLowerCase();
@@ -136,10 +136,10 @@ function arrayManipulation(arr, cmd, loc, val) {
     }
 }
 
-console.log(arrayManipulation([1, 2, 3], "remove", "end")); // 3
-console.log(arrayManipulation([1, 2, 3], "remove", "beginning")); // 1
-console.log(arrayManipulation([1, 2, 3], "add", "beginning", 20)); // [20,1,2,3]
-console.log(arrayManipulation([1, 2, 3], "add", "end", 30)); // [1,2,3,30]
+console.log("arrayManipulation: " + arrayManipulation([1, 2, 3], "remove", "end")); // 3
+console.log("arrayManipulation: " + arrayManipulation([1, 2, 3], "remove", "beginning")); // 1
+console.log("arrayManipulation: " + arrayManipulation([1, 2, 3], "add", "beginning", 20)); // [20,1,2,3]
+console.log("arrayManipulation: " + arrayManipulation([1, 2, 3], "add", "end", 30)); // [1,2,3,30]
 
 function isPalindrome(str) {
     var j = str.length - 1;
@@ -156,16 +156,16 @@ function isPalindrome(str) {
     } 
 }
 
-console.log(isPalindrome('testing')); // false
-console.log(isPalindrome('tacocat')); // true
-console.log(isPalindrome('hannah')); // true
-console.log(isPalindrome('robert')); // false
+console.log("isPalindrome: " + isPalindrome('testing')); // false
+console.log("isPalindrome: " + isPalindrome('tacocat')); // true
+console.log("isPalindrome: " + isPalindrome('hannah')); // true
+console.log("isPalindrome: " + isPalindrome('robert')); // false
 
 function rockPaperScissors(tryAgain) {
     if(tryAgain == false || tryAgain == undefined){
         console.log("\n\nWelcome to Rock-Paper-Scissors!\n");
         console.log(("Select a Sign to Throw! (Rock, Paper, or Scissors)"));
-    }    
+    }
 
     let cpuChoice = Math.floor(Math.random() * 3) + 1;
     let signToBeat = "";

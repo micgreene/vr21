@@ -1,5 +1,8 @@
 const prompt = require('prompt');
 
+console.log("\n\n\n//------------------------------------------------------//");
+console.log("Function Practice\n\n");
+
 function difference(a, b) {
     return a - b;
 }
@@ -161,6 +164,8 @@ console.log("isPalindrome: " + isPalindrome('tacocat')); // true
 console.log("isPalindrome: " + isPalindrome('hannah')); // true
 console.log("isPalindrome: " + isPalindrome('robert')); // false
 
+
+//FOR USE IN COMMAND LINE ONLY, WILL NOT WORK WITH BROWSER JS LIBRARIES!
 function rockPaperScissors(tryAgain) {
     if(tryAgain == false || tryAgain == undefined){
         console.log("\n\nWelcome to Rock-Paper-Scissors!\n");

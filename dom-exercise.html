@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <section id="container">
+        <ul>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ul>
+        <ol>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three!</li>
+        </ol>
+    </section>
+    <div class="footer">
+    </div>
+
+    <script>
+       let one = document.getElementById("container");
+       console.log("1) " + JSON.stringify(one) + " = " + one.tagName);
+
+       let two = document.querySelector("#container");
+       console.log("2) " + JSON.stringify(two) + " = " + two.tagName);
+
+       let three = document.querySelectorAll("li.second")
+       console.log("3) " + JSON.stringify(three) + " = " + three);
+
+       let four = document.querySelector("ol>li.third");
+       console.log("4) " + JSON.stringify(four) + " = " + four.tagName);
+       
+       let five = document.querySelector("#container").append("TEST");
+
+       let six = document.querySelector(".footer");
+       six.classList.add("main");
+       console.log("6) div class list:" + JSON.stringify(six.classList));
+
+       let seven = document.querySelector(".footer");
+       seven.classList.remove("main");
+       console.log("7) div class list:" + JSON.stringify(six.classList));
+
+       let eight = document.createElement("li");
+       console.log("8) " + JSON.stringify(eight) + " = " + eight.tagName);
+
+       let nine = eight;
+       nine.innerText = "four";
+
+       let ten = document.querySelector("ul").append(nine);
+
+       // 11
+       for (myLi of document.querySelector("ol").querySelectorAll("li")) {
+            console.log("11) ");
+            console.log(myLi);
+            myLi.style.backgroundColor = "green";
+       }
+        
+       // 12
+       document.querySelector(".footer").remove();
+       console.log("12) <div class=\"footer\">: " + document.querySelector(".footer"));
+       
+    </script>
+</body>
+</html>

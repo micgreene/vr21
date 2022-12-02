@@ -1,5 +1,8 @@
 .container {
-    
+    margin: 20px;
+    height: 1000px;
+    display:flex;
+    justify-content: center;
    
 }
 
@@ -9,8 +12,11 @@
     justify-content: center;
 
     background-color: darkgray;
-    height: 600px;
-    width: 450px;
+    background-image: repeating-linear-gradient(-45deg, rgba(255,255,255, 0.25), rgba(255,255,255, 0.25) 1px, transparent 1px, transparent 6px);
+    background-size: 8px 8px;
+    box-shadow: 0 19px 38px rgba(0,0,0,9), 0 15px 12px rgba(0,0,0,0.22);
+    height: 550px;
+    width: 425px;
     border-radius: 10px;    
     padding-top: .5em;
 }
@@ -22,6 +28,8 @@
     width: 400px;    
     margin: 0 auto;
     background-color: lightgreen;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 7px 7px rgba(0,0,0,.5);
+
     font-family: 'Source Code Pro', monospace;
     font-size: 50px;
     font-weight: bold;
@@ -47,6 +55,8 @@
 button {
     background-color: white;
     border: solid 1px black;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.1s cubic-bezier(.25,.8,.25,1);
     height: 70px;
     width: 70px;
     margin: 15px 5px;
@@ -56,11 +66,15 @@ button {
     box-shadow: 0px 5px rgb(126, 126, 126);
 }   
 
+button:hover {
+    outline: blue solid 2px;
+  }
+
 button:active {
     background-color: #878787;
     color: rgb(181, 181, 181);
     box-shadow: none;
-    transform: translateY(4px);
+    transform: translateY(8px);
 }
 
 .equals-button {

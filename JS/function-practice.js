@@ -1,5 +1,3 @@
-const prompt = require('prompt');
-
 console.log("\n\n\n//------------------------------------------------------//");
 console.log("Function Practice\n\n");
 
@@ -49,7 +47,7 @@ function printDay(day) {
         case 7: {
             return "Saturday"
             break;
-        }        
+        }
     }
 }
 
@@ -103,8 +101,8 @@ function multipleLetterCount(word) {
     return retObj
 }
 
-console.log("multipleLetterCount: " + multipleLetterCount("hello")); // {h:1, e: 1, l: 2, o:1}
-console.log("multipleLetterCount: " + multipleLetterCount("person")); // {p:1, e: 1, r: 1, s:1, o:1, n:1}
+console.log("multipleLetterCount: " + JSON.stringify(multipleLetterCount("hello"))); // {h:1, e: 1, l: 2, o:1}
+console.log("multipleLetterCount: " + JSON.stringify(multipleLetterCount("person"))); // {p:1, e: 1, r: 1, s:1, o:1, n:1}
 
 function arrayManipulation(arr, cmd, loc, val) {
     cmd = cmd.toLowerCase();
@@ -125,7 +123,7 @@ function arrayManipulation(arr, cmd, loc, val) {
             break;
         }
         case 4: {
-            if(cmd == "add"){
+            if (cmd == "add") {
                 if (loc == "beginning") {
                     arr.unshift(val);
                     return arr;
@@ -148,15 +146,15 @@ function isPalindrome(str) {
     var j = str.length - 1;
 
     for (var i = 0; i < str.length; i++) {
-        if (j == i || i > j && j < i) 
+        if (j == i || i > j && j < i)
             return true;
-        else if (str[i] == str[j]){
+        else if (str[i] == str[j]) {
             j--;
             continue;
-        } 
-        else 
+        }
+        else
             return false;
-    } 
+    }
 }
 
 console.log("isPalindrome: " + isPalindrome('testing')); // false
@@ -165,33 +163,38 @@ console.log("isPalindrome: " + isPalindrome('hannah')); // true
 console.log("isPalindrome: " + isPalindrome('robert')); // false
 
 
-//FOR USE IN COMMAND LINE ONLY, WILL NOT WORK WITH BROWSER JS LIBRARIES!
-function rockPaperScissors(tryAgain) {
-    if(tryAgain == false || tryAgain == undefined){
-        console.log("\n\nWelcome to Rock-Paper-Scissors!\n");
-        console.log(("Select a Sign to Throw! (Rock, Paper, or Scissors)"));
-    }
-
+//FOR USE IN BROWSER ONLY, WILL NOT WORK WITH NODE.JS!
+function rockPaperScissors(tryAgain, cpuScore = 0, playerScore = 0) {
+    // bindings for cpu choice
     let cpuChoice = Math.floor(Math.random() * 3) + 1;
     let signToBeat = "";
 
+    // phrases for different game conditions
     let rockWin = "Rock breaks Scissors.";
     let paperWin = "Paper covers Rock.";
     let scissorsWin = "Scissors cut Paper.";
     let win = "You Win!\n";
     let lose = "You Lose!\n";
     let tie = "You chose the same sign. It's a Tie!\n"
+    // let cpuScore = 0;
+    // let playerScore = 0;
 
-    prompt.start();
+    // offers user a chance to try again after game is done
+    const playAgainPrompt = () => {
+        let playAgain = prompt(`You: ${playerScore}\nCPU: ${cpuScore}\n\nWould you like to play again?\n(Yes or No)`);
 
-    const start = prompt.get(['choice'], function (err, result) {
-        if (err) {
-          return onErr(err);
-        }      
+        playAgain = playAgain.toLowerCase();
 
-        result.choice = result.choice.toLowerCase();
+        if (playAgain === "yes" || playAgain === "y" || playAgain === "yeah") {
+            playAgain = true;
+            rockPaperScissors(playAgain, cpuScore, playerScore);
+        }
 
-        switch(cpuChoice) {
+    }
+
+    // encapsulated game logic
+    const gameLogic = (choice) => {
+        switch (cpuChoice) {
             case 1: {
                 signToBeat = "Rock";
                 break;
@@ -203,49 +206,74 @@ function rockPaperScissors(tryAgain) {
             case 3: {
                 signToBeat = "Scissors"
             }
-        }                  
+        }
 
-        switch(result.choice) {            
+        switch (choice) {
             case "rock": {
-                console.log("\nCPU has selected: " + signToBeat + "!");
-                if(signToBeat == "Paper") {
-                    console.log(paperWin + lose);
-                } else if(signToBeat == "Scissors") {
-                    console.log(rockWin + win);
-                } else if(signToBeat == "Rock") {
-                    console.log(tie);
+                alert("\nCPU has selected: " + signToBeat + "!");
+                if (signToBeat === "Paper") {
+                    cpuScore++;
+                    alert(paperWin + lose);
+                } else if (signToBeat === "Scissors") {
+                    playerScore++;
+                    alert(rockWin + win);
+                } else if (signToBeat === "Rock") {
+                    playerScore++;
+                    cpuScore++;
+                    alert(tie);
                 }
+                playAgainPrompt();
                 break;
             }
             case "paper": {
-                console.log("\nCPU has selected: " + signToBeat + "!");
-                if(signToBeat == "Paper") {
-                    console.log(tie);
-                } else if(signToBeat == "Scissors") {
-                    console.log(scissorsWin + lose);
-                } else if(signToBeat == "Rock") {
-                    console.log(paperWin + win);
+                alert("\nCPU has selected: " + signToBeat + "!");
+                if (signToBeat === "Paper") {
+                    playerScore++;
+                    cpuScore++;
+                    alert(tie);
+                } else if (signToBeat === "Scissors") {
+                    cpuScore++;
+                    alert(scissorsWin + lose);
+                } else if (signToBeat === "Rock") {
+                    playerScore++;
+                    alert(paperWin + win);
                 }
+                playAgainPrompt();
                 break;
             }
             case "scissors": {
-                console.log("\nCPU has selected: " + signToBeat + "!");
-                if(signToBeat == "Paper") {
-                    console.log(scissorsWin + win);
-                } else if(signToBeat == "Scissors") {
-                    console.log(tie);
-                } else if(signToBeat == "Rock") {
-                    console.log(rockWin + lose);
+                alert("\nCPU has selected: " + signToBeat + "!");
+                if (signToBeat === "Paper") {
+                    playerScore++;
+                    alert(scissorsWin + win);
+                } else if (signToBeat === "Scissors") {
+                    playerScore++;
+                    cpuScore++;
+                    alert(tie);
+                } else if (signToBeat === "Rock") {
+                    cpuScore++;
+                    alert(rockWin + lose);
                 }
+                playAgainPrompt();
                 break;
             }
             default: {
-                console.log("\nYou must select ROCK, PAPER, or SCISSORS to play!");
+                alert("\nYou must select ROCK, PAPER, or SCISSORS to play!");
                 tryAgain = true;
-                rockPaperScissors(tryAgain);
+                rockPaperScissors(tryAgain, cpuScore, playerScore);
             }
-        }    
-    });    
+        }
+    }
+
+    let choice;
+
+    if (tryAgain === false || tryAgain === undefined) {
+        choice = prompt("Welcome to Rock-Paper-Scissors!\nSelect a Sign to Throw!\n(Rock, Paper, or Scissors)");
+    } else {
+        choice = prompt("Select a Sign to Throw!\n(Rock, Paper, or Scissors)");
+    }
+
+    gameLogic(choice);
 }
 
 rockPaperScissors();

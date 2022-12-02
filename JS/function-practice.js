@@ -258,7 +258,7 @@ function rockPaperScissors(tryAgain, cpuScore = 0, playerScore = 0) {
                 break;
             }
             default: {
-                alert("\nYou must select ROCK, PAPER, or SCISSORS to play!");
+                alert(choice + " won't defeat anything!\n\nYou must select ROCK, PAPER, or SCISSORS to play!");
                 tryAgain = true;
                 rockPaperScissors(tryAgain, cpuScore, playerScore);
             }

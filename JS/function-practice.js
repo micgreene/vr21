@@ -273,6 +273,7 @@ function rockPaperScissors(tryAgain, cpuScore = 0, playerScore = 0) {
         choice = prompt("Select a Sign to Throw!\n(Rock, Paper, or Scissors)");
     }
 
+    choice = choice.toLowerCase();
     gameLogic(choice);
 }
 

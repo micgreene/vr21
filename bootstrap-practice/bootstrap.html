@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Iconic Anime Vehicle Designs</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,11 +11,82 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald:wght@300&family=Roboto:wght@300;500&display=swap"
+        rel="stylesheet">
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald:wght@300&family=Roboto:wght@300;500&display=swap');
+
+        hr {
+            overflow: visible;
+            /* For IE */
+            height: 30px;
+            border-style: solid;
+            border-color: rgb(255, 153, 0);
+            border-width: 10px 0 0 0;
+            border-radius: 20px;
+        }
+
+        hr:before {
+            /* Not really supposed to work, but does */
+            display: block;
+            content: "";
+            height: 30px;
+            margin-top: -31px;
+            border-style: solid;
+            border-color: rgb(255, 162, 0);
+            border-width: 0px 0px 10px 0;
+            border-radius: 20px;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .nav-bar {
+            background-color: black;
+            color: white;
+            width: 100%;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 90px;
+        }
+
+        .title {
+
+            margin-left: 150px;
+            font-weight: 500%;
+            text-shadow: 1px 1px #9d9d9d;
+            scale: 130%;
+        }
+
+        #add-button {
+            border-radius: 50%;
+            height: 70px;
+            width: 70px;
+            margin-right: 70px;
+        }
+
         button {
             width: 95px;
             margin: 15px;
             display: inline-block;
+            text-shadow: .5px .5px black;
+            box-shadow: .5px 1px 3px #656565;
         }
 
         button:hover {
@@ -31,15 +102,69 @@
             transform: translateY(2px);
         }
 
-        .col-md-3 {
-            border: solid 1px black;
-            text-align: center;
+
+
+        .container {
+            padding-top: 90px;
+            margin: 0;
+            width: 100%;
             align-items: center;
-            padding: 10px;
+        }
+
+        .col-md-3 {
+            background-color: rgba(0, 0, 0, 0.292);
+
+            border: solid 1px black;
+            text-align: left;
+            border-radius: 15px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        card {
+            color: white;
+            margin: auto;
+        }
+
+        img {
+            width: 270px;
+            height: 180px;
+            background-color: black;
+            border: solid 5px black;
+            border-radius: 15px;
+        }
+
+        img:hover {
+            animation-name: scale-up;
+            animation-duration: .5s;
+            animation-fill-mode: forwards;
+        }
+
+        .col-md-3 h3 {
+            text-align: center;
+            text-shadow: 2px 2px#303030;
+        }
+
+        .col-md-3 h5,
+        h6 {
+            margin: 10px;
+            white-space: nowrap;
+            text-shadow: .5px .5px black;
+            color: rgb(255, 180, 40);
+        }
+
+        .col-md-3 p {
+            height: 200px;
+            margin: 20px 10px;
+            text-shadow: .5px .5px black;
         }
 
         #save-button {
-            background-color: #00ff08;
+            color: rgb(255, 255, 255);
+            background-color: #00d707;
             border: solid 1px green;
         }
 
@@ -52,85 +177,257 @@
             to {
                 background-color: rgb(255, 255, 255);
                 color: black;
+                text-shadow: .5px .5px rgb(179, 179, 179);
             }
+        }
+
+        @keyframes color-fade-cross {
+            to {
+                background-color: rgb(0, 0, 0);
+            }
+        }
+
+        @keyframes scale-up {
+            to {
+                scale: 170%;
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /*---Background Styling---*/
+        .circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -100;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+
+        }
+
+        .circles li:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+
+        .circles li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .circles li:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+
+        .circles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
+        .circles li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+
+        .circles li:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+
+        .circles li:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+
+        .circles li:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+
+        .circles li:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+
+        .circles li:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+
+
+
+        @keyframes animate {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+
+        }
+
+        #cross {
+            background: rgb(255, 189, 113);
+            height: 50px;
+            position: relative;
+            width: 10px;
+            margin-left: 17px;
+
+        }
+
+        #cross:after {
+            background: rgb(255, 189, 113);
+            content: "";
+            height: 10px;
+            left: -20px;
+            position: absolute;
+            top: 20px;
+            width: 50px;
+            
         }
     </style>
 </head>
 
 <body>
     <nav class="nav-bar">
+        <!--Title-->
+        <div class="title">
+            <h1>Iconic Anime Vehicle Designs</h1>
+        </div>
+
         <!-- Add Button -->
-        <button type="button" class="btn btn-primary" id="add-button" data-bs-toggle="modal" data-bs-target="#add-modal">
-            Add
+        <button type="button" class="btn btn-primary" id="add-button" data-bs-toggle="modal"
+            data-bs-target="#add-modal">
+            <div id="cross"></div>
         </button>
 
-        <!-- "Add New" Modal -->
-        <div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="add-modal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: rgb(77, 119, 255);">
-                        <h5 class="modal-title" id="add-modal" style="color: white"><b>Add New Card</b></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="new-image" class="form-label">New Image URL:</label>
-                                <input type="url" class="form-control" id="new-image">
-                            </div>
-                            <div class="mb-3">
-                                <label for="new-title" class="form-label">New Title:</label>
-                                <input type="text" class="form-control" id="new-title">
-                            </div>
-                            <div class="mb-3">
-                                <label for="new-descr" class="form-label">New Description:</label>
-                                <input type="text" class="form-control" id="new-descr">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                        <button type="button" class="btn btn-primary">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- "Update" Modal -->
-        <div class="modal fade" id="update-modal" tabindex="-1" aria-labelledby="update-modal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: rgb(0, 255, 0)">
-                        <h5 class="modal-title" id="update-modal" style="color: white"><b>Update Card</b></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="upd-image" class="form-label">Updated Image URL:</label>
-                                <input type="url" class="form-control" id="upd-image">
-                            </div>
-                            <div class="mb-3">
-                                <label for="upd-title" class="form-label">Updated Title:</label>
-                                <input type="text" class="form-control" id="upd-title">
-                            </div>
-                            <div class="mb-3">
-                                <label for="upd-descr" class="form-label">Updated Description:</label>
-                                <input type="text" class="form-control" id="upd-descr">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                        <button type="button" class="btn btn-primary"
-                            id="save-button">Update</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </nav>
+
+
+
+    <!-- "Add New" Modal -->
+    <div class="modal" tabindex="-1" id="add-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(77, 119, 255);">
+                    <h5 class="modal-title" id="add-modal" style="color: white"><b>Add New Card</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="new-image" class="form-label">New Image URL:</label>
+                            <input type="url" class="form-control" id="new-image">
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-title" class="form-label">New Title:</label>
+                            <input type="text" class="form-control" id="new-title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-descr" class="form-label">New Description:</label>
+                            <input type="text" class="form-control" id="new-descr">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- "Update" Modal -->
+    <div class="modal" tabindex="-1" id="update-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(0, 255, 0)">
+                    <h5 class="modal-title" id="update-modal" style="color: white"><b>Update Card</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="upd-image" class="form-label">Updated Image URL:</label>
+                            <input type="url" class="form-control" id="upd-image">
+                        </div>
+                        <div class="mb-3">
+                            <label for="upd-title" class="form-label">Updated Title:</label>
+                            <input type="text" class="form-control" id="upd-title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="upd-descr" class="form-label">Updated Description:</label>
+                            <input type="text" class="form-control" id="upd-descr">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    <button type="button" class="btn btn-primary" id="save-button">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- "Delete" Modal -->
     <div class="modal" tabindex="-1" id="delete-modal">
@@ -152,273 +449,369 @@
     </div>
 
 
+
     <!---Card Grid-->
     <div class="container">
+        <hr>
         <div class="row">
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
-
+                    <img src="https://i.pinimg.com/236x/b3/18/fd/b318fd8af41b9f28ad9ae109f5ea1cae--black-tigers-speed-racer.jpg"
+                        alt="black-tiger">
+                    <h3><b>Black Tiger</b></h3>
+                    <h5><b>Anime: </b>Speed Racer</h5>
+                    <h6><b>Driver: </b>Prince Kim Jugger</h6>
+                    <p>The Black Tiger is a formidible rally car, featuring a fully sealed cockpit and specially
+                        modified brakes. The Black Tiger sees its fair share of tragedy however, as it is first blown up
+                        and restored, just to be lost to the desert quicksand.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="https://i2.wp.com/www.animefeminist.com/wp-content/uploads/2018/03/Bonaparte-1.jpg?resize=640%2C480&ssl=1"
+                        alt="bonaparte">
+                    <h3><b>Bonaparte</b></h3>
+                    <h5><b>Anime: </b>Dominion Tank Police</h5>
+                    <h6><b>Driver: </b>Officer Leona Ozaki</h6>
+                    <p>A miniature tank custom-built by Leona Ozaki and Al'Cu Ad Solte from parts of the Tiger-I Special
+                        after it was destroyed. Ran on spiked treads that would tear up the road beneath it and even
+                        featured a mechanism that allowed it to jump over obstacles.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="https://i.pinimg.com/originals/4e/2b/d1/4e2bd1c4a7cc4d74d21830b9b6adfde4.png" alt="">
+                    <h3><b>Car Acrobatic Team</b></h3>
+                    <h5><b>Anime: </b>Speed Racer</h5>
+                    <h6><b>Driver(lead):</b> Captain Terror</h6>
+                    <p>A group of, as their name implies, automobile acrobats, as well as skilled racers. They are a
+                        recurring villainous organization.
+                        The Acrobatic Team is headed by Captain Terror, and their only other truly notable member is the
+                        cocky <i>Snake Oiler</i>.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="https://nefariousreviews.files.wordpress.com/2016/10/my-neighbor-totoro-cat-bus.jpg"
+                        alt="cat-bus">
+                    <h3><b>Catbus</b></h3>
+                    <h5><b>Anime: </b>My Neighbor Totoro</h5>
+                    <h6><b>Driver: </b>Self-Driving</h6>
+                    <p>The Catbus is a transporting animal bus-looking creature. He is met by Mei, Satsuki, and Totoro.
+                        (though Totoro could have known him for years since he already knows to take it to get back to
+                        his home under the camper tree).</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="../images/griffon.png" alt="griffon">
+                    <h3><b>Griffon</b></h3>
+                    <h5><b>Anime: </b>Big O</h5>
+                    <h6><b>Driver: </b>Roger Smith</h6>
+                    <p>A full sized black luxury sedan comparable to a James Bond spy vehicle and the Batmobile. The
+                        vehicle has a noticeably long profile, akin to large American luxury sedans from the mid-20th
+                        century, specifically the late 1950s to late 1960s.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2017%2F05%2Fakira-katsuhiro-otomo-kaneda-bike-1.jpg?q=90&w=1400&cbr=1&fit=max"
+                        alt="kaneda">
+                    <h3><b>Kaneda's Bike</b></h3>
+                    <h5><b>Anime: </b>Akira</h5>
+                    <h6><b>Driver: </b>Shotaro Kaneda</h6>
+                    <p>Artist Katsuhiro Otomo has said, “In terms of Kaneda’s bike in Akira, the initial inspiration
+                        was the lightcycles from Tron designed by Syd Mead. However, they are wide, so I halved them and
+                        used that as an initial basis.”</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="https://kuciara.com/wp-content/uploads/2019/07/150825_VEH_BatouCar_MK_v001B.jpg"
+                        alt="batou-car">
+                    <h3><b>Lancia Stratos</b></h3>
+                    <h5><b>Anime: </b>Ghost in the Shell</h5>
+                    <h6><b>Driver: </b>Batou Buttetsu</h6>
+                    <p> Batou is often seen driving a modified Lancia Stratos coupe, one of his most cherished
+                        possessions. Togusa uses Batou's love of the car as a comeback after being criticized for his
+                        use of a revolver instead of modern handgun.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/3/38/Mach_five_car_anime.jpg" alt="mach-5">
+                    <h3><b>Mach-5</b></h3>
+                    <h5><b>Anime: </b>Speed Racer</h5>
+                    <h6><b>Driver: </b>Speed Racer</h6>
+                    <p>An automotive machine incomparable to any other on the racing circuit. Unique aerodynamic design,
+                        coupled with special devices, six-speed manual transmission, and a top speed of ~250 mph.
+                    </p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="https://ami.animecharactersdatabase.com/uploads/chars/9180-967486145.jpg"
+                        alt="mammoth-car">
+                    <h3><b>Mammoth Car</b></h3>
+                    <h5><b>Anime: </b>Speed Racer</h5>
+                    <h6><b>Driver: </b>Crewed by Many</h6>
+                    <p>An 18' tall, over 200 yard-long, hulking single vehicle convoy. The Mammoth Car sports 44-wheels
+                        split among 10 different sections, the ability to maintain speeds of 200 MPH+ on any terrain,
+                        and electromagnetic brakes.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="data:image/jpeg;base64,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"
+                        alt="grx">
+                    <h3><b>GRX</b></h3>
+                    <h5><b>Anime: </b>Speed Racer</h5>
+                    <h6><b>Driver: </b>Oriana Flub's subordinates</h6>
+                    <p> It is an extremely powerful and dangerous racing engine designed and built by automotive genius
+                        Ben Cranem. It could reach velocities so high that it negatively affects the driver's sense of
+                        coordination.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="data:image/jpeg;base64,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"
+                        alt="lupin">
+                    <h3><b>Fiat 500</b></h3>
+                    <h5><b>Anime: </b>Lupin III</h5>
+                    <h6><b>Driver: </b>Lupin III</h6>
+                    <p>The Fiat 500 (Italian: Cinquecento) is a rear-engined, four-seat, small city car that was
+                        manufactured and marketed by Fiat Automobiles from 1957 to 1975. In most of its appearances in
+                        Lupin III media, it is usually colored yellow.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="https://pbs.twimg.com/media/DFV9XInWsAEOmiU.jpg" alt="bulma">
+                    <h3><b>Renalt 5 Turbo</b></h3>
+                    <h5><b>Anime: </b>Dragonball</h5>
+                    <h6><b>Driver: </b>Bulma Briefs</h6>
+                    <p>A 1984 Renault 5 Turbo, or R5 Turbo. Bulma's Car is destroyed by Son Goku while she's travelling
+                        through the Eastern Mountains, as he believed it to be some kind of monster. It's a Hoi-Poi
+                        Capsule car, and is quickly replaced by Bulma's Scooter. </p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="https://pbs.twimg.com/media/EQYOS_GU8AAR45s.jpg" alt="mega-max">
+                    <h3><b>RM02 "Mega-Max"</b></h3>
+                    <h5><b>Anime: </b>Promare</h5>
+                    <h6><b>Driver: </b>Lucia Fex</h6>
+                    <p>A mecha firetruck used during Burning Rescue operations. It stores various equipment under
+                        firefighter regulations and shoots out rescue gear from the ladder. It is piloted by Lucia Fex.
+                        The Mega Max's front features a plow for debris or other obstacles.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="https://thenewswheel.com/wp-content/themes/patterns/timthumb.php?src=https://thenewswheel.com/wp-content/uploads/2016/03/Redline-Anime-2009-racing-movie-review-Grand-Am-Yellowline.jpg&q=90&w=660&zc=1"
+                        alt="">
+                    <h3><b>Trans Am 20000 WR </b></h3>
+                    <h5><b>Anime: </b>Redline</h5>
+                    <h6><b>Driver: </b>Sweet JP</h6>
+                    <p>A heavily customized Trans Am WR. It's implied it has already undergone extensive modification
+                        from the basic model to allow it to remain competitive by the time of the Yellowline race, the
+                        Trans Am might have been making well over 350,000 horsepower.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="data:image/jpeg;base64,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"
+                        alt="shooting-star">
+                    <h3><b>Shooting Star</b></h3>
+                    <h5><b>Anime: </b>Speed Racer</h5>
+                    <h6><b>Driver: </b>Racer X (Rex Racer)</h6>
+                    <p>Commissioned by Kapetapek Royal Industries, designed by Dr. Bent Cranium (the same man who had
+                        also designed the infamous GRX engine), and manufactured by Cranium Motor Works as the "9th
+                        Protégé Prototype" for use by Rex Racer.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
             <div class="col-md-3">
                 <card>
-                    <img src="https://via.placeholder.com/250" alt="">
-                    <h1>Title</h1>
-                    <p>Description Text.</p>
+                    <img src="https://www.drifted.com/wp-content/uploads/2021/04/initial-d-ae86.jpg" alt="initial-d">
+                    <h3><b>Toyota AE86</b></h3>
+                    <h5><b>Anime: </b>Initial D</h5>
+                    <h6><b>Driver: </b>Takumi Fujiwara</h6>
+                    <p>Takumi Fujiwara's Toyota Sprinter Trueno GT-APEX (AE86), also known as The White Ghost of Akina,
+                        the Panda Trueno, or more simply as the Eight-Six (Hachi-Roku), is one of the main vehicles in
+                        the Initial D series. </p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                    id="save-button">
+                        id="save-button">
                         Update
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                    id="del-button">
+                        id="del-button">
                         Delete
                     </button>
                 </card>
             </div>
         </div>
+        <hr>
+    </div>
+
+
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
 
     <!-- Bootstrap JavaScript Libraries -->

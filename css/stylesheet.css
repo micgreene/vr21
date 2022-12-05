@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;1,300&display=swap');
 
 #name h1{
   border-right: .15em solid orange;
@@ -20,7 +20,7 @@
 
 #name h1 {
   width: 7em;
-  -webkit-animation: type 2s steps(25, end);
+  -webkit-animation: type 1s steps(25, end);
   animation: type 1s steps(25, end);
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -153,7 +153,6 @@
 
 body {
   background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(56, 113, 255));
-  font-family: 'Source Code Pro', monospace;
 }
 h1 {
   margin:auto;
@@ -213,7 +212,7 @@ i {
   color: white;
   text-shadow: 1px 1px black;
   font-size: x-large;
-
+  font-family: 'Source Code Pro', monospace;
   border-radius: 15px;
   width: 600px;
   height: 450px;
@@ -356,15 +355,15 @@ text-shadow: 1px 1px black;
   overflow: hidden;
   background-color: #333;
   position: fixed;
+  margin: 0 auto;
   bottom: 0;
   width: 100%;
+  text-align: center;
 }
 
 .footer a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
+  display: inline;
+  color: #f2f2f2;  
   padding: 2px 25px;
   text-decoration: none;
   font-size: 17px;

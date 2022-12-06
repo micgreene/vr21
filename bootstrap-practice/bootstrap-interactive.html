@@ -91,7 +91,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-primary" id="add-save-button">Save</button>
                     </div>
                 </div>
             </div>
@@ -154,6 +154,26 @@
     <!---Card Grid-->
     <div class="container">
         <div class="row">
+            <div class="col-md-3">
+                <card>
+                    <img src="../images/griffon.png" alt="griffon">
+                    <h3><b>Griffon</b></h3>
+                    <h5><b>Anime: </b>Big O</h5>
+                    <h6><b>Driver: </b>Roger Smith</h6>
+                    <p>A full sized black luxury sedan comparable to a James Bond spy vehicle and the Batmobile. The
+                        vehicle has a noticeably long profile, akin to large American luxury sedans from the mid-20th
+                        century, specifically the late 1950s to late 1960s.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
+                        id="save-button">
+                        Update
+                    </button>
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
+                        id="del-button">
+                        Delete
+                    </button>
+                </card>
+            </div>
         </div>
     </div>    
    
@@ -168,29 +188,43 @@
         </script>
 
         <script>
-            const contentCard = 
-            `<card>
-            <img src="https://via.placeholder.com/250" alt="">
-            <h1>Title</h1>
-            <p>Description Text.</p>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-            id="save-button">
-                Update
-            </button>
+            
 
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-            id="del-button">
-                Delete
-            </button>
-        </card>`
+        // const cardColumn = document.createElement("div");
+        // cardColumn.setAttribute("class", "col-md-3");
+        // cardColumn.innerText = "card one";
 
-        const cardColumn = document.createElement("div");
-        cardColumn.setAttribute("class", "col-md-3");
-        cardColumn.innerText = "card one";
+        // const row = document.querySelector(".row");
+        // row.append(cardColumn);
+        </script>
 
-        const row = document.querySelector(".row");
-        row.append(cardColumn);
+        <script>           
+            document.querySelector("#add-save-button").addEventListener("click", (e) => {
+                const contentCard = 
+            `<div class="col-md-3">
+                <card>
+                    <img src="../images/griffon.png" alt="griffon">
+                    <h3><b>Griffon</b></h3>
+                    <h5><b>Anime: </b>Big O</h5>
+                    <h6><b>Driver: </b>Roger Smith</h6>
+                    <p>A full sized black luxury sedan comparable to a James Bond spy vehicle and the Batmobile. The
+                        vehicle has a noticeably long profile, akin to large American luxury sedans from the mid-20th
+                        century, specifically the late 1950s to late 1960s.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
+                        id="save-button">
+                        Update
+                    </button>
 
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
+                        id="del-button">
+                        Delete
+                    </button>
+                </card>
+            </div>`
+
+                console.log(contentCard);
+                document.querySelector(".row").insertAdjacentHTML("beforeend", contentCard);
+            });
         </script>
 </body>
 

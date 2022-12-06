@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
+
+body {    
+    background-image: linear-gradient(to right, #8360c3, #2ebf91);
+}
+
+.nav-bar {   
+    text-align: center;
+    color: white;
+}
+
+.nav-bar h1, label {
+    font-family: 'Rakkas', cursive;
+    text-shadow: 1px 1px black;
+}
+
+.nav-form div {
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.col-md-3 {
+    outline: solid 1px rgb(255, 255, 255);
+}
+
+.meme-card {    
+    text-align: center;
+    align-items: center;    
+}
+
+img {
+    width: 100%;
+    box-shadow: 5px 10px 5px black;
+}
+
+.meme-top-text {    
+    background-color: rgba(0, 0, 0, 0.219);
+    text-shadow: 1px 1px black;
+    position: relative;
+    top: 40px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    margin-left: auto 0;
+    z-index: 1;
+}
+
+.meme-bot-text {
+    background-color: rgba(0, 0, 0, 0.219);
+    text-shadow: 1px 1px black;
+    position: relative;
+    bottom: 40px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    margin-left: auto 0;
+    z-index: 1;
+}
+
+

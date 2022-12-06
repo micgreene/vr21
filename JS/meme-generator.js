@@ -4,7 +4,7 @@ document.querySelector("#create-button").addEventListener("click", (e) => {
     cardNumber++;
 
     let newColumn = document.createElement("div");
-    newColumn.setAttribute("class", "col-md-3");
+    newColumn.setAttribute("class", "col-md-4");
 
     let card = document.createElement("card");
     card.setAttribute("class", "meme-card");
@@ -17,13 +17,13 @@ document.querySelector("#create-button").addEventListener("click", (e) => {
 
     let cardTextTop = document.createElement("h3");
     cardTextTop.setAttribute("class", "meme-top-text");
-    cardTextTop.setAttribute("id", "meme-top"+cardNumber);
+    cardTextTop.setAttribute("id", "text-responsive");
     let topTxt = document.querySelector("#text-top").value
     cardTextTop.innerText = topTxt;
 
     let cardTextBot = document.createElement("h3");
     cardTextBot.setAttribute("class", "meme-bot-text");
-    cardTextBot.setAttribute("id", "meme-bot"+cardNumber);
+    cardTextBot.setAttribute("id", "text-responsive");
     let botTxt = document.querySelector("#bot-text").value
     cardTextBot.innerText = botTxt;
     

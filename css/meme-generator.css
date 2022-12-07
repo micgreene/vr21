@@ -5,7 +5,8 @@ body {
 }
 
 #text-responsive {
-    font-size: calc(100% + 1vw + 1vh);
+    font-size: calc(100% + .5vw + .5vh);
+    white-space: nowrap;
   }
 
 .nav-bar {   
@@ -16,6 +17,8 @@ body {
 .nav-bar h1, label {
     font-family: 'Rakkas', cursive;
     text-shadow: 1px 1px black;
+    scale: 150%;
+    margin: 10px;
 }
 
 .nav-form div {

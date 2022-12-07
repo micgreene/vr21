@@ -4,7 +4,7 @@ document.querySelector("#create-button").addEventListener("click", (e) => {
     cardNumber++;
 
     let newColumn = document.createElement("div");
-    newColumn.setAttribute("class", "col-md-4");
+    newColumn.setAttribute("class", "col-md-3");
 
     let card = document.createElement("card");
     card.setAttribute("class", "meme-card");

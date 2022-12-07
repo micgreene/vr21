@@ -7,7 +7,6 @@ const cards = document.querySelectorAll('.flip-card-inner');
 [...cards].forEach((card)=>{
   card.addEventListener( "click", () => {
     if(!card.classList.contains("is-flipped")) {
-        // console.log("Card1: " + card.lastElementChild.innerText);
         cardsFaceUp++;
         if(cardsFaceUp === 1) {
             card1 = card;

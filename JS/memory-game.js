@@ -16,12 +16,7 @@ const cards = document.querySelectorAll('.flip-card-inner');
             card2 = card;
             card.classList.toggle('is-flipped');
             checkMatch(card1, card2);            
-        } 
-               
-    }
-
-    if(cardsFaceUp == 2) {
-
+        }                
     }
   });
 });

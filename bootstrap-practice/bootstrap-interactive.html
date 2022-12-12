@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Iconic Anime Vehicle Designs</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,11 +11,118 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald:wght@300&family=Roboto:wght@300;500&display=swap"
+        rel="stylesheet">
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald:wght@300&family=Roboto:wght@300;500&display=swap');
+
+        hr {
+            overflow: visible;
+            /* For IE */
+            height: 30px;
+            border-style: solid;
+            border-color: rgb(255, 153, 0);
+            border-width: 10px 0 0 0;
+            border-radius: 20px;
+            z-index: -10;
+        }
+
+        hr:before {
+            /* Not really supposed to work, but does */
+            display: block;
+            content: "";
+            height: 30px;
+            margin-top: -31px;
+            border-style: solid;
+            border-color: rgb(255, 162, 0);
+            border-width: 0px 0px 10px 0;
+            border-radius: 20px;
+            z-index: -10;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #text-responsive {
+            font-size: calc(100% + .1vw + .1vh);
+        }
+
+        .nav-bar {
+            z-index: 100;
+            background-color: black;
+            color: white;
+            width: 100%;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 90px;
+        }
+
+        .title {
+            margin-left: 150px;
+            font-weight: 500%;
+            text-shadow: 1px 1px #9d9d9d;
+            scale: 130%;
+            white-space: nowrap;
+        }
+
+        #cross {
+            background: rgb(255, 189, 113);
+            height: 50px;
+            position: relative;
+            top: -7px;
+            width: 10px;
+            margin: auto auto;
+
+        }
+
+        #cross:after {
+            background: rgb(255, 189, 113);
+            content: "";
+            height: 10px;
+            left: -20px;
+            position: absolute;
+            top: 20px;
+            width: 50px;
+            margin: auto auto;
+
+        }
+
+        card {
+            color: white;
+            margin: 15px 25px;
+            width: 100%;
+            height: auto;
+            position: relative;
+            padding-bottom: 45px;
+            text-align: center;
+        }
+
+        card p {
+            text-align: left;
+        }
+
         button {
             width: 95px;
-            margin: 15px;
+            margin: 5px;
             display: inline-block;
+            text-shadow: .5px .5px black;
+            box-shadow: .5px 1px 3px #656565;
         }
 
         button:hover {
@@ -31,27 +138,372 @@
             transform: translateY(2px);
         }
 
-        .col-md-3 {
-            border: solid 1px black;
-            text-align: center;
+        #add-button {
+            /* margin-left: 100px; */
+            border-radius: 3px;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 10px;
+            height: 50px;
+            width: 50px;
+
+            animation-name: stretch;
+            animation-duration: .5s;
+            animation-timing-function: ease-out;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        /* Tooltip text */
+        #add-button .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: rgb(108, 108, 108);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+
+            animation-name: clickme;
+            animation-duration: .5s;
+            animation-timing-function: ease-out;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        #add-button:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        .container {
+            padding-top: 90px;
+            margin: 0;
+            width: 100%;
+            align-items: center;
+        }
+
+        .col-lg-3,
+        .col-md-4,
+        .col-sm-6,
+        .col-xs-6 {
+            background-color: rgba(0, 0, 0, 0.292);
+
+            border: solid 1px black;
+            text-align: left;
+            border-radius: 15px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        img {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            margin-bottom: 15px;
+            background-color: black;
+            border: solid 5px black;
+            border-radius: 15px;
+            z-index: 10;
+        }
+
+        img:hover {
+            animation-name: scale-up;
+            animation-duration: .5s;
+            animation-fill-mode: forwards;
+            z-index: 1000;
+        }
+
+        .col-xs-6 h3 {
+            text-align: center;
+            text-shadow: 2px 2px#303030;
+            scale: 150%;
+            margin: 15px;
+        }
+
+        .col-lg-3,
+        .col-md-4,
+        .col-sm-6,
+        .col-xs-6 h5,
+        h6 {
+            text-shadow: .5px .5px black;
+            color: rgb(255, 180, 40);
+        }
+
+        .col-lg-3,
+        .col-md-4,
+        .col-sm-6,
+        .col-xs-6 p {
+            /* height: 600px; */
+            /* margin: 20px 10px; */
+            text-shadow: .5px .5px black;
+        }
+
+        #mod-save-button {
+            background-color: #00d707;
+            border-color: green;
+        }
+
+        #mod-del-button {
+            background-color: red;
+            border-color: rgb(168, 0, 0);
         }
 
         #save-button {
-            background-color: #00ff08;
-            border: solid 1px green;
+            color: rgb(255, 255, 255);
+            background-color: #00d707;
+            border-color: green;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
         }
 
         #del-button {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
             background-color: red;
-            border: solid 1px rgb(168, 0, 0);
+            border-color: rgb(168, 0, 0);
+            border: solid 1px;
         }
 
         @keyframes color-fade {
             to {
                 background-color: rgb(255, 255, 255);
                 color: black;
+                text-shadow: .5px .5px rgb(179, 179, 179);
+            }
+        }
+
+        @keyframes color-fade-cross {
+            to {
+                background-color: rgb(0, 0, 0);
+            }
+        }
+
+        @keyframes scale-up {
+            to {
+                scale: 170%;
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes stretch {
+            0% {
+                transform: scale(.9);
+                background-color: rgb(0, 68, 255);
+                border-radius: 9px;
+            }
+
+            50% {
+                background-color: rgb(39, 97, 255);
+            }
+
+            100% {
+                transform: scale(1.1);
+                background-color: rgb(88, 132, 255);
+            }
+        }
+
+        @keyframes clickme {
+            50% {
+                visibility: hidden;
+            }
+
+            75% {
+                visibility: visible;
+            }
+        }
+
+        /*---Background Styling---*/
+        .circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -100;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+
+        }
+
+        .circles li:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+
+        .circles li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .circles li:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+
+        .circles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
+        .circles li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+
+        .circles li:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+
+        .circles li:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+
+        .circles li:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+
+        .circles li:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+
+        .circles li:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+
+        @keyframes animate {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+
+        }
+
+        /*---Media Queries---*/
+        @media (max-width: 575.5px) {
+            img {
+                width: 250px;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .title {
+                scale: 95%;
+                margin-left: 50px;
+                font-size: 16px;
+            }
+
+            #add-button {
+                scale: 50%;
+                margin-right: 50px;
+            }
+
+            #add-button .tooltiptext {
+                left: -30px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #save-button {
+                margin: 0px;
+                bottom: -10px;
+                left: -10px
+            }
+
+            #del-button {
+                margin: 0px;
+                bottom: -10px;
+                right: -10px
+            }
+        }
+
+        @media (min-width: 860px) {
+            #add-button .tooltiptext {
+                left: -30px
+            }
+        }
+
+        @media (max-width: 768px) {
+            #add-button .tooltiptext {
+                width: 50px;
+                left: -8px
             }
         }
     </style>
@@ -59,78 +511,86 @@
 
 <body>
     <nav class="nav-bar">
+        <!--Title-->
+        <div class="title">
+            <h1>Iconic Anime Vehicle Designs</h1>
+        </div>
+
         <!-- Add Button -->
-        <button type="button" class="btn btn-primary" id="add-button" data-bs-toggle="modal" data-bs-target="#add-modal">
-            Add
+        <button type="button" class="btn btn-primary" class="tooltip" id="add-button" data-bs-toggle="modal"
+            data-bs-target="#add-modal">
+            <div id="cross"></div>
+            <span class="tooltiptext">Click Me!</span>
         </button>
 
-        <!-- "Add New" Modal -->
-        <div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="add-modal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: rgb(77, 119, 255);">
-                        <h5 class="modal-title" id="add-modal" style="color: white"><b>Add New Card</b></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="new-image" class="form-label">New Image URL:</label>
-                                <input type="url" class="form-control" id="new-image">
-                            </div>
-                            <div class="mb-3">
-                                <label for="new-title" class="form-label">New Title:</label>
-                                <input type="text" class="form-control" id="new-title">
-                            </div>
-                            <div class="mb-3">
-                                <label for="new-descr" class="form-label">New Description:</label>
-                                <input type="text" class="form-control" id="new-descr">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                        <button type="button" class="btn btn-primary" id="add-save-button">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- "Update" Modal -->
-        <div class="modal fade" id="update-modal" tabindex="-1" aria-labelledby="update-modal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: rgb(0, 255, 0)">
-                        <h5 class="modal-title" id="update-modal" style="color: white"><b>Update Card</b></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="upd-image" class="form-label">Updated Image URL:</label>
-                                <input type="url" class="form-control" id="upd-image">
-                            </div>
-                            <div class="mb-3">
-                                <label for="upd-title" class="form-label">Updated Title:</label>
-                                <input type="text" class="form-control" id="upd-title">
-                            </div>
-                            <div class="mb-3">
-                                <label for="upd-descr" class="form-label">Updated Description:</label>
-                                <input type="text" class="form-control" id="upd-descr">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                        <button type="button" class="btn btn-primary"
-                            id="save-button">Update</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </nav>
+
+    <!-- "Add New" Modal -->
+    <div class="modal" tabindex="-1" id="add-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(77, 119, 255);">
+                    <h5 class="modal-title" id="add-modal" style="color: white"><b>Add New Card</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="new-image" class="form-label">New Image URL:</label>
+                            <input type="url" class="form-control" id="new-img">
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-title" class="form-label">New Title:</label>
+                            <input type="text" class="form-control" id="new-title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-descr" class="form-label">New Description:</label>
+                            <input type="text" class="form-control" id="new-descr">
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    <button type="button" class="btn btn-primary" id="add-save-button">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- "Update" Modal -->
+    <div class="modal" tabindex="-1" id="update-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(0, 255, 0)">
+                    <h5 class="modal-title" id="update-modal" style="color: white"><b>Update Card</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="upd-image" class="form-label">Updated Image URL:</label>
+                            <input type="url" class="form-control" id="upd-img">
+                        </div>
+                        <div class="mb-3">
+                            <label for="upd-title" class="form-label">Updated Title:</label>
+                            <input type="text" class="form-control" id="upd-title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="upd-descr" class="form-label">Updated Description:</label>
+                            <input type="text" class="form-control" id="upd-descr">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    <button type="button" class="btn btn-primary" id="mod-save-button">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- "Delete" Modal -->
     <div class="modal" tabindex="-1" id="delete-modal">
@@ -141,11 +601,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure you want to DELETE?</p>
+                    <p id="text-responsive">Are you sure you want to DELETE?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="del-button">DELETE</button>
+                    <button type="button" class="btn btn-primary" id="mod-del-button">DELETE</button>
                 </div>
             </div>
         </div>
@@ -153,30 +613,28 @@
 
     <!---Card Grid-->
     <div class="container">
+        <hr>
         <div class="row">
-            <div class="col-md-3">
-                <card>
-                    <img src="../images/griffon.png" alt="griffon">
-                    <h3><b>Griffon</b></h3>
-                    <h5><b>Anime: </b>Big O</h5>
-                    <h6><b>Driver: </b>Roger Smith</h6>
-                    <p>A full sized black luxury sedan comparable to a James Bond spy vehicle and the Batmobile. The
-                        vehicle has a noticeably long profile, akin to large American luxury sedans from the mid-20th
-                        century, specifically the late 1950s to late 1960s.</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                        id="save-button">
-                        Update
-                    </button>
 
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                        id="del-button">
-                        Delete
-                    </button>
-                </card>
-            </div>
         </div>
-    </div>    
-   
+        <hr>
+    </div>
+
+
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -187,45 +645,150 @@
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
 
-        <script>
-            
-
-        // const cardColumn = document.createElement("div");
-        // cardColumn.setAttribute("class", "col-md-3");
-        // cardColumn.innerText = "card one";
-
-        // const row = document.querySelector(".row");
-        // row.append(cardColumn);
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
         </script>
 
-        <script>           
-            document.querySelector("#add-save-button").addEventListener("click", (e) => {
-                const contentCard = 
-            `<div class="col-md-3">
-                <card>
-                    <img src="../images/griffon.png" alt="griffon">
-                    <h3><b>Griffon</b></h3>
-                    <h5><b>Anime: </b>Big O</h5>
-                    <h6><b>Driver: </b>Roger Smith</h6>
-                    <p>A full sized black luxury sedan comparable to a James Bond spy vehicle and the Batmobile. The
-                        vehicle has a noticeably long profile, akin to large American luxury sedans from the mid-20th
-                        century, specifically the late 1950s to late 1960s.</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal"
-                        id="save-button">
-                        Update
-                    </button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
 
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal"
-                        id="del-button">
-                        Delete
-                    </button>
-                </card>
-            </div>`
+    <script>
+        let cardTotal;
+        let cardToBeDeletedId;
+        let cardArr = [];
 
-                console.log(contentCard);
-                document.querySelector(".row").insertAdjacentHTML("beforeend", contentCard);
+        //see if this is the first time this ip address has used storage
+        //if not, parse the elements from local storage and reassemble them
+        if (!localStorage.getItem("cardArr")) {
+            cardTotal = 0;
+        } else {            
+            cardArr = localStorage.getItem("cardArr");
+            cardArr = JSON.parse(cardArr);
+            cardTotal = cardArr.length;
+
+            cardArr.forEach(element => {
+                //assemble refreshed cards
+                let newCardDiv = document.createElement("div");
+                newCardDiv.setAttribute("class", "col-lg-3 col-md-4 col-sm-6 col-xs-6");                
+                newCardDiv.innerHTML = element;
+                newCardDiv.setAttribute("id", newCardDiv.childNodes[0].id);
+                document.querySelector(".row").append(newCardDiv);
+
+                // add listenrs to keep track of last element clicked
+                newCardDiv.childNodes[0].childNodes[4].addEventListener("click", (e) => {
+                    cardToBeDeletedId = document.querySelector(`#${newCardDiv.id}`);
+                });
+                newCardDiv.childNodes[0].childNodes[3].addEventListener("click", (e) => {
+                    cardToBeDeletedId = document.querySelector(`#${newCardDiv.id}`);
+                });
             });
-        </script>
-</body>
+        }
 
+        //-------------------Adding New Cards Event--------------------------//
+        document.querySelector("#add-save-button").addEventListener("click", (e) => {
+            cardTotal++;
+
+            //-------------New Card Div----------------//
+            let newCardDiv = document.createElement("div");
+            newCardDiv.setAttribute("class", "col-lg-3 col-md-4 col-sm-6 col-xs-6");
+
+            newCardDiv.setAttribute("id", `A${cardTotal}`);
+
+            //----------Card Attributes-----------//
+            let newCard = document.createElement("card");
+            newCard.setAttribute("id", `A${cardTotal}`);
+
+            let cardImg = document.createElement("img");
+            let imgUrl = document.querySelector("#new-img").value;
+            cardImg.setAttribute("src", imgUrl);
+
+            let cardH3 = document.createElement("h3");
+            cardH3.setAttribute("id", "text-responsive");
+            let cardTitle = document.querySelector("#new-title").value;
+            cardH3.innerText = cardTitle;
+
+            cardImg.setAttribute("alt", cardTitle.toLowerCase());
+
+            let cardP = document.createElement("p");
+            cardP.setAttribute("id", "text-responsive");
+            cardP.innerText = document.querySelector("#new-descr").value;
+
+            //-----------Update/Delete Buttons--------------//
+            let updButton = document.createElement("button");
+            let delButton = document.createElement("button");
+
+            updButton.setAttribute("type", "button");
+            updButton.setAttribute("class", "btn btn-primary");
+            updButton.setAttribute("id", "save-button");
+            updButton.setAttribute("data-bs-toggle", "modal");
+            updButton.setAttribute("data-bs-target", "#update-modal");
+            updButton.innerText = "Update";
+
+            delButton.setAttribute("type", "button");
+            delButton.setAttribute("class", "btn btn-primary");
+            delButton.setAttribute("id", "del-button");
+            delButton.setAttribute("data-bs-toggle", "modal");
+            delButton.setAttribute("data-bs-target", `#delete-modal`);
+            delButton.innerText = "Delete";
+
+            //--------Assemble the Card Div and Append to .Row---------------//
+            newCard.append(cardImg, cardH3, cardP, updButton, delButton);
+            newCardDiv.append(newCard);
+            document.querySelector(".row").append(newCardDiv);
+
+            //push html to array, atringify it, store it, then parse it ack for further use
+            cardArr.push(newCardDiv.innerHTML);
+            cardArr = JSON.stringify(cardArr);
+            localStorage.setItem("cardArr", cardArr);
+            cardArr = JSON.parse(cardArr);
+
+            //add listeners to keep track of last element clicked on
+            delButton.addEventListener("click", (e) => {
+                cardToBeDeletedId = document.querySelector(`#${e.target.parentElement.parentElement.id}`);
+            });
+            updButton.addEventListener("click", (e) => {
+                cardToBeDeletedId = document.querySelector(`#${e.target.parentElement.parentElement.id}`);
+            });
+        });
+
+        //---------------Updating Existing Cards Event------------------------//
+        document.querySelector("#mod-save-button").addEventListener("click", (e) => {
+            cardToBeDeletedId.childNodes[0].childNodes[0].src = e.target.parentElement.parentElement.children[1].childNodes[1][0].value
+
+            cardToBeDeletedId.childNodes[0].childNodes[1].innerText = e.target.parentElement.parentElement.children[1].childNodes[1][1].value
+
+            cardToBeDeletedId.childNodes[0].childNodes[2].innerText = e.target.parentElement.parentElement.children[1].childNodes[1][2].value
+
+            let currCards = document.querySelectorAll(".col-lg-3,.col-md-4,.col-sm-6,.col-xs-6");
+
+            //clear array, push html to array, atringify it, store it, then parse it ack for further use
+            cardArr = [];
+            currCards.forEach(element => {                
+                cardArr.push(element.innerHTML);
+            });
+            cardArr = JSON.stringify(cardArr);
+            console.log("NEW ENTRY: ", cardArr);
+            localStorage.setItem("cardArr", cardArr);
+            cardArr = JSON.parse(cardArr);
+        });
+
+        //----------------------Deleting Cards Event------------------------//
+        document.querySelector("#mod-del-button").addEventListener("click", (e) => {
+            cardToBeDeletedId.remove();
+
+            let currCards = document.querySelectorAll(".col-lg-3,.col-md-4,.col-sm-6,.col-xs-6");
+
+            //clear array, push html to array, atringify it, store it, then parse it ack for further use
+            cardArr = [];
+            currCards.forEach(element => {
+                cardArr.push(element.innerHTML);
+            });
+            cardArr = JSON.stringify(cardArr);
+            localStorage.setItem("cardArr", cardArr);
+            cardArr = JSON.parse(cardArr);
+        });
+    </script>
+</body>
 </html>

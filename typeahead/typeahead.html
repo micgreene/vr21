@@ -44,18 +44,26 @@
             list-style: none;
         }
 
-        .list {
+        .results {
             width: 100%;
             background-color: #ffffff;
             border-radius: 0 0 5px 5px;
         }
 
         .list-item {
-            padding: 10px 5px;
+            width: 50%;
+            padding: 10px 5px;            
         }
 
-        .list-item:hover {
-            background-color: #dddddd;
+        .list-item a{
+            padding: 3px;
+            text-decoration: none;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+
+        .list-item a:hover {
+            background-color: #626262;
         }
     </style>
     <title>Type Ahead Example</title>
@@ -68,7 +76,7 @@
     </div>
 
     <script>
-        let words = ["apple", "avatar", "avarice", "avenue", "butter", "carrier", "dynamite", "endless", "farcry", "ghost", "hollow", "indigo", "january", "kangaroo", "linguistics", "merryweather", "nanomachine", "osteoperosis", "pangea", "quebec", "reservation", "seasonal", "tungsten", "university", "vertitude", "winding", "xray", "yankee", "zebra"]
+        let words = ["apple", "avatar", "avarice", "avenue", "aventura", "butter", "carrier", "dynamite", "endless", "farcry", "ghost", "hollow", "indigo", "january", "kangaroo", "linguistics", "merryweather", "nanomachine", "osteoperosis", "pangea", "quebec", "reservation", "seasonal", "tungsten", "university", "vertitude", "winding", "xray", "yankee", "zebra"];
 
         let results = [];
 
@@ -90,36 +98,32 @@
                         const str = words[j];
                         const regexp = new RegExp('^' + searchWord[i]);
                         const matches = str.match(regexp);
+                        
                         if (matches && matches.length > 0) {
-                            // let newLink = document.createElement("a");
-                            // newLink.innerHTML = words[j];
-                            // newLink.title = results[j];
-                            // newLink.href = "#";
-                            // results.push(newLink);
-                            // console.log("newlink: ", newLink);
-                            results.push(words[j]);
+                            let newLink = document.createElement("a");
+                            newLink.setAttribute("href", "#");
+                            newLink.innerText = words[j];
+                            results.push(newLink);
                         }
                     }
                 } else {
                     let newResults = [];
                     for (var j = 0; j < results.length; j++) {
-                        const str = results[j];
+                        const str = results[j].innerText;
                         let regexp = new RegExp('^' + searchWord[0]);
 
                         for (var k = 1; k <= i; k++) {
                             regexp = new RegExp(regexp.source + searchWord[k]);
                         }
-
+                        console.log("the str: ", str);
                         const matches = str.match(regexp);
 
                         if (matches) {
-                            // let newLink = document.createElement("a");
-                            // var linkText = document.createTextNode(results[j]);
-                            // newLink.appendChild(linkText);
-                            // newLink.title = results[j];
-                            // newLink.href = "#";
-                            // newResults.push(newLink);
-                            newResults.push(results[j]);
+                            let newLink = document.createElement("a");
+                            newLink.setAttribute("href", "#");
+                            newLink.innerText = results[j].innerText;
+                            newResults.push(newLink);
+                            console.log("newresults: ", newResults);
                         }
                     }
 
@@ -139,7 +143,7 @@
             for (var i = 0; i < results.length; i++) {
                 const li = document.createElement("li");
                 li.setAttribute("class", "list-item");
-                li.innerText = results[i];
+                li.append(results[i]);
                 resultsList.append(li);
             }
         });        

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, red, blue);
+        }
+
+        form {
+            width: 75vmin;
+            height: 100%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            padding: 40px 0;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px 10px;
+            border: none;
+            border-bottom: 1px solid #645979;
+            outline: none;
+            border-radius: 5px 5px 0 0;
+            background-color: #ffffff;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .list {
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .list-item {
+            padding: 10px 5px;
+        }
+
+        .list-item:hover {
+            background-color: #dddddd;
+        }
+    </style>
+    <title>Type Ahead Example</title>
+</head>
+
+<body>
+    <div class="container">
+        <input class="searchbar" id="typeahead" placeholder="Search Me" />
+        <ul id="results"></ul>
+    </div>
+
+    <script>
+        let words = ["apple", "avatar", "avarice", "avenue", "butter", "carrier", "dynamite", "endless", "farcry", "ghost", "hollow", "indigo", "january", "kangaroo", "linguistics", "merryweather", "nanomachine", "osteoperosis", "pangea", "quebec", "reservation", "seasonal", "tungsten", "university", "vertitude", "winding", "xray", "yankee", "zebra"]
+
+        let results = [];
+
+        document.querySelector(".searchbar").addEventListener("input", (e) => {
+            const resultsList = document.querySelector("#results");
+            const searchWord = e.target.value.toLowerCase();
+            results = [];
+
+            if (searchWord.length === 0) {
+                while (resultsList.firstChild) {
+                    resultsList.firstChild.remove();
+                }
+                return;
+            }
+
+            for (var i = 0; i < searchWord.length; i++) {
+                if (i === 0) {
+                    for (var j = 0; j < words.length; j++) {
+                        const str = words[j];
+                        const regexp = new RegExp('^' + searchWord[i]);
+                        const matches = str.match(regexp);
+                        if (matches && matches.length > 0) {
+                            // let newLink = document.createElement("a");
+                            // newLink.innerHTML = words[j];
+                            // newLink.title = results[j];
+                            // newLink.href = "#";
+                            // results.push(newLink);
+                            // console.log("newlink: ", newLink);
+                            results.push(words[j]);
+                        }
+                    }
+                } else {
+                    let newResults = [];
+                    for (var j = 0; j < results.length; j++) {
+                        const str = results[j];
+                        let regexp = new RegExp('^' + searchWord[0]);
+
+                        for (var k = 1; k <= i; k++) {
+                            regexp = new RegExp(regexp.source + searchWord[k]);
+                        }
+
+                        const matches = str.match(regexp);
+
+                        if (matches) {
+                            // let newLink = document.createElement("a");
+                            // var linkText = document.createTextNode(results[j]);
+                            // newLink.appendChild(linkText);
+                            // newLink.title = results[j];
+                            // newLink.href = "#";
+                            // newResults.push(newLink);
+                            newResults.push(results[j]);
+                        }
+                    }
+
+                    if (newResults.length > 0) {
+                        results = [];
+                        results = results.concat(newResults);
+                    }
+                }
+            }
+
+
+            while (resultsList.firstChild) {
+                resultsList.firstChild.remove();
+            }
+
+            results.sort();
+            for (var i = 0; i < results.length; i++) {
+                const li = document.createElement("li");
+                li.setAttribute("class", "list-item");
+                li.innerText = results[i];
+                resultsList.append(li);
+            }
+        });        
+    </script>
+</body>
+
+</html>
